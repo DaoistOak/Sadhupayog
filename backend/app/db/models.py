@@ -1,38 +1,36 @@
-from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.orm import relationship
+# backend/app/db/models.py
+
+from sqlalchemy import Column, Integer, String
 from app.db.base import Base
 
 class User(Base):
-    __tablename__ = "users"
+    __tablename__ = 'users'
+
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String, unique=True, index=True, nullable=False)
+    email = Column(String, unique=True, index=True, nullable=False)
     hashed_password = Column(String, nullable=False)
-    role = Column(String, nullable=False)  # e.g., buyer, seller, cold_store
-
-    buyer = relationship("Buyer", back_populates="user", uselist=False)
-    seller = relationship("Seller", back_populates="user", uselist=False)
-    cold_store = relationship("ColdStore", back_populates="user", uselist=False)
 
 class Buyer(Base):
-    __tablename__ = "buyers"
-    id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(Integer, ForeignKey("users.id"))
-    inventory = Column(String)  # JSON or serialized data
+    __tablename__ = 'buyers'
 
-    user = relationship("User", back_populates="buyer")
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String)
+    contact = Column(String)
 
 class Seller(Base):
-    __tablename__ = "sellers"
-    id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(Integer, ForeignKey("users.id"))
-    products = Column(String)  # JSON or serialized data
+    __tablename__ = 'sellers'
 
-    user = relationship("User", back_populates="seller")
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String)
+    contact = Column(String)
 
 class ColdStore(Base):
-    __tablename__ = "cold_stores"
-    id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(Integer, ForeignKey("users.id"))
-    mobile_verified = Column(Boolean, default=False)
+    __tablename__ = 'cold_stores'
 
-    user = relationship("User", back_populates="cold_store") 
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String)
+
+
+
+    
