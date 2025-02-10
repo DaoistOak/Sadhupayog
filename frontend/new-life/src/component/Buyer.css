@@ -1,0 +1,130 @@
+.button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #FFEBEB;
+    border-radius: 50px;
+    border: none;
+    padding: 9px 10px;
+    margin-bottom: 76px;
+    margin-left: 35px;
+    text-align: left;
+  }
+  
+  .button2 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #2C2C2C;
+    border-radius: 8px;
+    border: 1px solid #2C2C2C;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    text-align: left;
+  }
+  
+  .column {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #51433D;
+    padding-top: 41px;
+    padding-bottom: 41px;
+  }
+  
+  .column2 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 8px;
+    border: 1px solid #D9D9D9;
+    padding: 29px 24px;
+    margin-bottom: 28px;
+    margin-left: 35px;
+    margin-right: 35px;
+  }
+  
+  .contain {
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+  }
+  
+  .input {
+    color: #B3B3B3;
+    font-size: 16px;
+    margin-bottom: 28px;
+    align-self: stretch;
+    background: #FFFFFF;
+    border-radius: 8px;
+    border: 1px solid #D9D9D9;
+    padding: 14px 17px;
+  }
+  
+  .input2 {
+    color: #B3B3B3;
+    font-size: 16px;
+    margin-bottom: 29px;
+    align-self: stretch;
+    background: #FFFFFF;
+    border-radius: 8px;
+    border: 1px solid #D9D9D9;
+    padding: 14px 17px;
+  }
+  
+  .input3 {
+    color: #B3B3B3;
+    font-size: 16px;
+    margin-bottom: 26px;
+    align-self: stretch;
+    background: #FFFFFF;
+    border-radius: 8px;
+    border: 1px solid #D9D9D9;
+    padding: 14px 17px;
+  }
+  
+  .scroll-view {
+    height: 852px;
+    align-self: stretch;
+    background: #FFFFFF;
+  }
+  
+  .text {
+    color: #2C2C2C;
+    font-size: 16px;
+  }
+  
+  .text2 {
+    color: #E8CA97;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 32px;
+    margin-left: 106px;
+  }
+  
+  .text3 {
+    color: #E8CA97;
+    font-size: 16px;
+    margin-bottom: 9px;
+  }
+  
+  .text4 {
+    color: #E8CA97;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .text5 {
+    color: #F5F5F5;
+    font-size: 16px;
+  }
+  
+  .text6 {
+    color: #E8CA97;
+    font-size: 15px;
+    margin-left: 59px;
+  }
+  
