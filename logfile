@@ -430,3 +430,7 @@
 2025-02-10 15:38:16.988 UTC [4217] LOG:  listening on IPv4 address "127.0.0.1", port 5432
 2025-02-10 15:38:16.992 UTC [4217] FATAL:  could not create lock file "/run/postgresql/.s.PGSQL.5432.lock": No such file or directory
 2025-02-10 15:38:16.994 UTC [4217] LOG:  database system is shut down
+2025-02-10 21:44:25.319 UTC [72180] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 21:44:25.324 UTC [72180] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-02-10 21:44:25.329 UTC [72180] FATAL:  could not create lock file "/run/postgresql/.s.PGSQL.5432.lock": No such file or directory
+2025-02-10 21:44:25.333 UTC [72180] LOG:  database system is shut down

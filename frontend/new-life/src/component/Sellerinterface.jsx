@@ -39,7 +39,7 @@ const SellerInterface = ({ username }) => {
   return (
     <div className="seller-container">
       <div className="seller-header">
-        <h1>Welcome, {username}!</h1>
+        <h1>Welcome {username}!</h1>
         <button className="logout-button" onClick={() => navigate("/")}>
           Logout
         </button>
