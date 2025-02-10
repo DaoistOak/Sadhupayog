@@ -108,3 +108,154 @@
 	
 2025-02-09 17:04:22.747 +0545 [334645] LOG:  checkpoint starting: time
 2025-02-09 17:04:28.493 +0545 [334645] LOG:  checkpoint complete: wrote 56 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=5.512 s, sync=0.213 s, total=5.746 s; sync files=49, longest=0.009 s, average=0.005 s; distance=171 kB, estimate=4043 kB; lsn=0/22D9040, redo lsn=0/22D8FB0
+2025-02-09 23:38:15.772 +0545 [1315505] ERROR:  database "dbname" does not exist
+2025-02-09 23:38:15.772 +0545 [1315505] STATEMENT:  GRANT ALL PRIVILEGES ON DATABASE dbname TO myappuser;
+2025-02-09 23:40:12.720 +0545 [1315505] ERROR:  database "sadhupayog" does not exist
+2025-02-09 23:40:12.720 +0545 [1315505] STATEMENT:  GRANT ALL PRIVILEGES ON DATABASE Sadhupayog TO myappuser;
+2025-02-09 23:40:34.518 +0545 [1315505] ERROR:  syntax error at or near "GRANT" at character 31
+2025-02-09 23:40:34.518 +0545 [1315505] STATEMENT:  create database Sadhupayog
+	   GRANT ALL PRIVILEGES ON DATABASE Sadhupayog TO myappuser;
+2025-02-09 23:40:41.233 +0545 [1315505] ERROR:  database "sadhupayog" does not exist
+2025-02-09 23:40:41.233 +0545 [1315505] STATEMENT:  GRANT ALL PRIVILEGES ON DATABASE Sadhupayog TO myappuser;
+2025-02-09 23:44:32.311 +0545 [334645] LOG:  checkpoint starting: time
+2025-02-09 23:46:09.461 +0545 [334645] LOG:  checkpoint complete: wrote 965 buffers (5.9%); 0 WAL file(s) added, 0 removed, 0 recycled; write=96.730 s, sync=0.397 s, total=97.151 s; sync files=303, longest=0.008 s, average=0.002 s; distance=4471 kB, estimate=4471 kB; lsn=0/2736E20, redo lsn=0/2736D90
+2025-02-10 00:04:05.576 +0545 [1340178] ERROR:  syntax error at or near "create" at character 29
+2025-02-10 00:04:05.576 +0545 [1340178] STATEMENT:  Create database cold_stores
+	create database cold_stores;
+2025-02-10 00:04:19.955 +0545 [1340178] ERROR:  relation "cold_stores" does not exist at character 13
+2025-02-10 00:04:19.955 +0545 [1340178] STATEMENT:  INSERT INTO cold_stores (name, location, capacity, temperature_range, description, contact_info)
+	VALUES 
+	('Arctic Storage', 'Mumbai', 1000.0, '-18°C to -22°C', 'Large cold storage facility', '+91-1234567890'),
+	('Cool Zone', 'Delhi', 750.0, '-15°C to -20°C', 'Modern cold chain facility', '+91-9876543210');
+2025-02-10 00:04:32.746 +0545 [1340178] ERROR:  relation "cold_stores" does not exist at character 13
+2025-02-10 00:04:32.746 +0545 [1340178] STATEMENT:  INSERT INTO cold_stores (name, location, capacity, temperature_range, description, contact_info)
+	VALUES 
+	('Arctic Storage', 'Mumbai', 1000.0, '-18°C to -22°C', 'Large cold storage facility', '+91-1234567890'),
+	('Cool Zone', 'Delhi', 750.0, '-15°C to -20°C', 'Modern cold chain facility', '+91-9876543210');
+2025-02-10 00:04:32.863 +0545 [334645] LOG:  checkpoint starting: time
+2025-02-10 00:06:09.753 +0545 [334645] LOG:  checkpoint complete: wrote 962 buffers (5.9%); 0 WAL file(s) added, 0 removed, 0 recycled; write=96.316 s, sync=0.510 s, total=96.890 s; sync files=300, longest=0.009 s, average=0.002 s; distance=4470 kB, estimate=4471 kB; lsn=0/2B94958, redo lsn=0/2B948C8
+2025-02-10 01:41:58.870 +0545 [1435402] FATAL:  database "sadupayog" does not exist
+2025-02-10 01:42:18.470 +0545 [1435742] FATAL:  database "sadupayog" does not exist
+2025-02-10 01:43:59.918 +0545 [1437334] FATAL:  database "sadupayog" does not exist
+2025-02-10 01:46:24.284 +0545 [1439802] ERROR:  permission denied for schema public at character 15
+2025-02-10 01:46:24.284 +0545 [1439802] STATEMENT:  
+	CREATE TABLE buyers (
+		id SERIAL NOT NULL, 
+		username VARCHAR, 
+		hashed_password VARCHAR, 
+		business_name VARCHAR, 
+		email VARCHAR, 
+		PRIMARY KEY (id), 
+		UNIQUE (email)
+	)
+	
+	
+2025-02-10 01:49:34.338 +0545 [334645] LOG:  checkpoint starting: time
+2025-02-10 01:49:40.660 +0545 [334645] LOG:  checkpoint complete: wrote 62 buffers (0.4%); 0 WAL file(s) added, 0 removed, 0 recycled; write=6.135 s, sync=0.162 s, total=6.323 s; sync files=56, longest=0.005 s, average=0.003 s; distance=245 kB, estimate=4048 kB; lsn=0/2BD1F60, redo lsn=0/2BD1F08
+2025-02-10 01:52:00.414 +0545 [1445486] ERROR:  permission denied for schema public at character 15
+2025-02-10 01:52:00.414 +0545 [1445486] STATEMENT:  
+	CREATE TABLE buyers (
+		id SERIAL NOT NULL, 
+		username VARCHAR, 
+		hashed_password VARCHAR, 
+		business_name VARCHAR, 
+		email VARCHAR, 
+		PRIMARY KEY (id), 
+		UNIQUE (email)
+	)
+	
+	
+2025-02-10 01:53:54.863 +0545 [1446626] ERROR:  database "sadhupayou" does not exist
+2025-02-10 01:53:54.863 +0545 [1446626] STATEMENT:  GRANT ALL PRIVILEGES ON DATABASE sadhupayou TO myappuser;
+2025-02-10 01:53:54.863 +0545 [1446626] ERROR:  role "myapuser" does not exist
+2025-02-10 01:53:54.863 +0545 [1446626] STATEMENT:  GRANT ALL PRIVILEGES ON SCHEMA public TO myapuser;
+2025-02-10 01:54:07.111 +0545 [1446626] ERROR:  database "sadupayou" does not exist
+2025-02-10 01:54:07.111 +0545 [1446626] STATEMENT:  GRANT ALL PRIVILEGES ON DATABASE sadupayou TO myappuser;
+2025-02-10 01:54:07.111 +0545 [1446626] ERROR:  role "myapuser" does not exist
+2025-02-10 01:54:07.111 +0545 [1446626] STATEMENT:  GRANT ALL PRIVILEGES ON SCHEMA public TO myapuser;
+2025-02-10 01:54:18.822 +0545 [1446626] ERROR:  role "myapuser" does not exist
+2025-02-10 01:54:18.822 +0545 [1446626] STATEMENT:  GRANT ALL PRIVILEGES ON SCHEMA public TO myapuser;
+2025-02-10 01:54:34.703 +0545 [334645] LOG:  checkpoint starting: time
+2025-02-10 01:54:37.924 +0545 [334645] LOG:  checkpoint complete: wrote 32 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=3.110 s, sync=0.087 s, total=3.222 s; sync files=21, longest=0.006 s, average=0.005 s; distance=25 kB, estimate=3646 kB; lsn=0/2BD85D8, redo lsn=0/2BD8580
+2025-02-10 01:55:12.073 +0545 [1448751] ERROR:  permission denied for schema public at character 15
+2025-02-10 01:55:12.073 +0545 [1448751] STATEMENT:  
+	CREATE TABLE buyers (
+		id SERIAL NOT NULL, 
+		username VARCHAR, 
+		hashed_password VARCHAR, 
+		business_name VARCHAR, 
+		email VARCHAR, 
+		PRIMARY KEY (id), 
+		UNIQUE (email)
+	)
+	
+	
+2025-02-10 01:57:04.986 +0545 [1450712] ERROR:  permission denied for schema public at character 15
+2025-02-10 01:57:04.986 +0545 [1450712] STATEMENT:  
+	CREATE TABLE buyers (
+		id SERIAL NOT NULL, 
+		username VARCHAR, 
+		hashed_password VARCHAR, 
+		business_name VARCHAR, 
+		email VARCHAR, 
+		PRIMARY KEY (id), 
+		UNIQUE (email)
+	)
+	
+	
+2025-02-10 01:59:21.726 +0545 [1452958] ERROR:  permission denied for schema public at character 15
+2025-02-10 01:59:21.726 +0545 [1452958] STATEMENT:  
+	CREATE TABLE buyers (
+		id SERIAL NOT NULL, 
+		username VARCHAR, 
+		hashed_password VARCHAR, 
+		business_name VARCHAR, 
+		email VARCHAR, 
+		PRIMARY KEY (id), 
+		UNIQUE (email)
+	)
+	
+	
+2025-02-10 01:59:35.024 +0545 [334645] LOG:  checkpoint starting: time
+2025-02-10 01:59:36.102 +0545 [334645] LOG:  checkpoint complete: wrote 11 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.007 s, sync=0.048 s, total=1.079 s; sync files=11, longest=0.009 s, average=0.005 s; distance=20 kB, estimate=3283 kB; lsn=0/2BDD850, redo lsn=0/2BDD7F8
+2025-02-10 02:25:10.497 +0545 [334645] LOG:  checkpoint starting: time
+2025-02-10 02:25:12.430 +0545 [334645] LOG:  checkpoint complete: wrote 19 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.826 s, sync=0.083 s, total=1.941 s; sync files=15, longest=0.023 s, average=0.006 s; distance=38 kB, estimate=2959 kB; lsn=0/2BE72E0, redo lsn=0/2BE7250
+2025-02-10 02:30:10.530 +0545 [334645] LOG:  checkpoint starting: time
+2025-02-10 02:30:16.655 +0545 [334645] LOG:  checkpoint complete: wrote 60 buffers (0.4%); 0 WAL file(s) added, 0 removed, 0 recycled; write=5.924 s, sync=0.175 s, total=6.125 s; sync files=54, longest=0.005 s, average=0.004 s; distance=207 kB, estimate=2684 kB; lsn=0/2C1B0A0, redo lsn=0/2C1B048
+2025-02-10 09:01:20.762 +0545 [334645] LOG:  checkpoint starting: time
+2025-02-10 09:01:26.656 +0545 [334645] LOG:  checkpoint complete: wrote 57 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=5.659 s, sync=0.215 s, total=5.896 s; sync files=53, longest=0.007 s, average=0.005 s; distance=192 kB, estimate=2434 kB; lsn=0/2C4B140, redo lsn=0/2C4B0E8
+2025-02-10 09:06:20.747 +0545 [334645] LOG:  checkpoint starting: time
+2025-02-10 09:06:20.915 +0545 [334645] LOG:  checkpoint complete: wrote 1 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.101 s, sync=0.006 s, total=0.169 s; sync files=1, longest=0.006 s, average=0.006 s; distance=7 kB, estimate=2192 kB; lsn=0/2C4D008, redo lsn=0/2C4CFB0
+2025-02-10 09:31:30.069 +0545 [1558705] ERROR:  relation "sellers" already exists
+2025-02-10 09:31:30.069 +0545 [1558705] STATEMENT:  CREATE TABLE sellers (
+	    id SERIAL PRIMARY KEY,
+	    name VARCHAR(255) NOT NULL,
+	    images TEXT  -- Assuming images are stored as JSON or a list of URLs
+	);
+2025-02-10 09:31:42.756 +0545 [1558705] ERROR:  relation "seller_goods" already exists
+2025-02-10 09:31:42.756 +0545 [1558705] STATEMENT:  CREATE TABLE seller_goods (
+	    id SERIAL PRIMARY KEY,
+	    seller_id INTEGER NOT NULL,
+	    goods_name VARCHAR(255) NOT NULL,
+	    weight_kg FLOAT NOT NULL,
+	    FOREIGN KEY (seller_id) REFERENCES sellers(id)
+	);
+2025-02-10 09:31:49.321 +0545 [1558705] ERROR:  relation "buyers" already exists
+2025-02-10 09:31:49.321 +0545 [1558705] STATEMENT:  CREATE TABLE buyers (
+	    id SERIAL PRIMARY KEY,
+	    username VARCHAR(255) UNIQUE NOT NULL,
+	    hashed_password TEXT NOT NULL,
+	    business_name VARCHAR(255) NOT NULL,
+	    email VARCHAR(255) UNIQUE NOT NULL
+	);
+2025-02-10 09:31:53.175 +0545 [1558705] ERROR:  relation "cold_stores" already exists
+2025-02-10 09:31:53.175 +0545 [1558705] STATEMENT:  CREATE TABLE cold_stores (
+	    id SERIAL PRIMARY KEY,
+	    location VARCHAR(255) NOT NULL,
+	    capacity FLOAT NOT NULL,
+	    active_time VARCHAR(255) NOT NULL
+	);
+2025-02-10 09:33:33.613 +0545 [1558705] ERROR:  column "images" of relation "sellers" does not exist at character 28
+2025-02-10 09:33:33.613 +0545 [1558705] STATEMENT:  INSERT INTO sellers (name, images) VALUES ('Sample Seller', '["image1.jpg", "image2.jpg"]');
+2025-02-10 09:36:21.483 +0545 [334645] LOG:  checkpoint starting: time
+2025-02-10 09:36:25.634 +0545 [334645] LOG:  checkpoint complete: wrote 41 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.015 s, sync=0.116 s, total=4.151 s; sync files=32, longest=0.008 s, average=0.004 s; distance=106 kB, estimate=1983 kB; lsn=0/2C67A70, redo lsn=0/2C67A18

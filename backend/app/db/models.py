@@ -1,36 +1,20 @@
-# backend/app/db/models.py
-
-from sqlalchemy import Column, Integer, String
-from app.db.base import Base
-
-class User(Base):
-    __tablename__ = 'users'
-
-    id = Column(Integer, primary_key=True, index=True)
-    username = Column(String, unique=True, index=True, nullable=False)
-    email = Column(String, unique=True, index=True, nullable=False)
-    hashed_password = Column(String, nullable=False)
-
-class Buyer(Base):
-    __tablename__ = 'buyers'
-
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(String)
-    contact = Column(String)
+from sqlalchemy import Column, Integer, String, ForeignKey, Float
+from sqlalchemy.orm import relationship
+from .base import Base  # Import Base from base.py
 
 class Seller(Base):
-    __tablename__ = 'sellers'
+    __tablename__ = "sellers"
 
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String)
-    contact = Column(String)
+    name = Column(String, index=True)
+    goods = relationship("SellerGoods", back_populates="seller")
 
-class ColdStore(Base):
-    __tablename__ = 'cold_stores'
+class SellerGoods(Base):
+    __tablename__ = "seller_goods"
 
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String)
+    seller_id = Column(Integer, ForeignKey('sellers.id'))
+    goods_name = Column(String, index=True)
+    weight_kg = Column(Float)
 
-
-
-    
+    seller = relationship("Seller", back_populates="goods") 

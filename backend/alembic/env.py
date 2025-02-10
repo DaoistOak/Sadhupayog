@@ -20,9 +20,8 @@ config.set_main_option("sqlalchemy.url", os.getenv("DATABASE_URL"))
 
 # Import all your models here so Alembic can detect them
 from app.db.base import Base
-from app.api.routes.user import User
 from app.api.routes.buyers import Buyer
-from app.api.routes.sellers import Seller
+from backend.app.api.routes.buyers import Seller
 from app.api.routes.cold_stores import ColdStore
 
 target_metadata = Base.metadata
