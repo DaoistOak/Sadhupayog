@@ -77,7 +77,7 @@ const LoginPage = (props) => {
               onChange={handleInputChange}
               className="input"
             />
-            <span className="text3">Email (Optional)</span>
+            <span className="text3">Email </span>
             <input
               name="email"
               type="email"
@@ -104,7 +104,8 @@ const LoginPage = (props) => {
               className="input2"
             />
             <button className="button2" onClick={() => navigate("/Sellerinterface")}>
-              <span className="text3">REGISTER</span>
+              <span className="text4">REGISTER</span>
+             
             </button>
           </div>
         </div>

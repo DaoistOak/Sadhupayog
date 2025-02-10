@@ -34,7 +34,7 @@ const Home = () => {
       <div className="auth-content">
         <div className="auth-card">
           <div className="brand">
-            <h1 className="brand-title">SADHUPAYOG</h1>
+            <h1 className="brand-title">SADUPAYOG</h1>
             <p className="brand-subtitle">Welcome back! Please login to your account.</p>
           </div>
 
@@ -94,10 +94,10 @@ const Home = () => {
             <div className="register-options">
               <h2 className="register-title">Choose your role</h2>
               <div className="role-buttons">
-                <button className="role-button buyer" onClick={() => navigate("/buyer")}>
-                  <span className="role-icon">🛒</span>
-                  <span className="role-text">Buyer</span>
-                </button>
+                
+                
+                
+                
                 <button className="role-button seller" onClick={() => navigate("/LoginPage")}>
                   <span className="role-icon">💼</span>
                   <span className="role-text">Seller</span>

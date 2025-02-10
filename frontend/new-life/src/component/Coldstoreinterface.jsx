@@ -6,23 +6,23 @@ import "./Coldstoreinterface.css"
 
 // Mock data for sellers and products
 const sellers = [
-  { id: 1, name: "John Doe", location: "New York" },
-  { id: 2, name: "Jane Smith", location: "Los Angeles" },
-  { id: 3, name: "Bob Johnson", location: "Chicago" },
+  { id: 1, name: "Dalaram Thapa", location: "Bhaktapur" },
+  { id: 2, name: "Hari Khadka", location: "Butwal" },
+  { id: 3, name: "Krrish Nyoupane", location: "kathmandu" },
 ]
 
 const products = {
   1: [
-    { name: "Apples", price: 2.5, discountPrice: 2.0 },
-    { name: "Carrots", price: 1.5, discountPrice: 1.2 },
+    { name: "Apples", price: 200, discountPrice: 40},
+    { name: "Carrots", price: 60, discountPrice: 10 },
   ],
   2: [
-    { name: "Bananas", price: 1.8, discountPrice: 1.5 },
-    { name: "Tomatoes", price: 2.2, discountPrice: 1.9 },
+    { name: "Bananas", price: 90, discountPrice: 10},
+    { name: "Tomatoes", price: 120, discountPrice: 40},
   ],
   3: [
-    { name: "Oranges", price: 3.0, discountPrice: 2.7 },
-    { name: "Potatoes", price: 1.0, discountPrice: 0.8 },
+    { name: "Oranges", price: 85, discountPrice: 25},
+    { name: "Potatoes", price: 150, discountPrice: 35},
   ],
 }
 
@@ -67,8 +67,8 @@ const ColdStoreInterface = () => {
               {products[selectedSeller].map((product, index) => (
                 <tr key={index}>
                   <td>{product.name}</td>
-                  <td>${product.price.toFixed(2)}</td>
-                  <td>${product.discountPrice.toFixed(2)}</td>
+                  <td>Rs{product.price.toFixed(2)}</td>
+                  <td>Rs{product.discountPrice.toFixed(2)}</td>
                 </tr>
               ))}
             </tbody>
