@@ -1,69 +1,272 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
-import "./Cold.css";
+"use client"
 
-const Cold = (props) => {
-  const navigate = useNavigate(); // Define the navigate function
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import "./Cold.css"
 
-  const [input1, onChangeInput1] = useState('');
-  const [input2, onChangeInput2] = useState('');
-  const [input3, onChangeInput3] = useState('');
-  const [input4, onChangeInput4] = useState('');
-  const [input5, onChangeInput5] = useState('');
+const Cold = () => {
+  const navigate = useNavigate()
+
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+    reenterPassword: "",
+    contactNumber: "",
+    email: "",
+    panNumber: "",
+    organizationName: "",
+    establishedDate: "",
+    description: ""
+  })
+
+  const [errors, setErrors] = useState({})
+  const [showAlert, setShowAlert] = useState(false)
+
+  const validateForm = () => {
+    const newErrors = {}
+    const fields = {
+      username: "Username",
+      password: "Password",
+      reenterPassword: "Re-enter Password",
+      contactNumber: "Contact Number",
+      email: "Email",
+      panNumber: "PAN Number",
+      organizationName: "Organization Name",
+      establishedDate: "Established Date",
+      description: "Description"
+    }
+
+    // Check each field for emptiness
+    Object.keys(fields).forEach(field => {
+      if (!formData[field].trim()) {
+        newErrors[field] = `${fields[field]} is required`
+      }
+    })
+
+    // Additional email validation
+    if (formData.email && !/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address"
+    }
+
+    // Contact number validation (assuming 10 digits)
+    if (formData.contactNumber && !/^\d{10}$/.test(formData.contactNumber)) {
+      newErrors.contactNumber = "Please enter a valid 10-digit contact number"
+    }
+
+    // Password match validation
+    if (formData.password !== formData.reenterPassword) {
+      newErrors.reenterPassword = "Passwords do not match"
+    }
+
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
+
+  const handleSubmit = () => {
+    if (validateForm()) {
+      setShowAlert(true)
+      setTimeout(() => {
+        navigate("/Coldstoreinterface")
+      }, 5000)
+    }
+  }
+
+  const handleChange = (field, value) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }))
+    // Clear error when user starts typing
+    if (errors[field]) {
+      setErrors(prev => ({
+        ...prev,
+        [field]: ""
+      }))
+    }
+  }
 
   return (
-    <div className="contain">
-      <div className="scroll-view">
-        <div className="column">
-          <button className="button" onClick={() => alert("Pressed!")}>
-            <span className="text">{"BACK"}</span>
-          </button>
-          <span className="text2">{"COLD STORES DETAILS"}</span>
-          <div className="column2">
-            <span className="text3">{"Contact Number"}</span>
-            <input
-              placeholder={"Enter your Contact Number"}
-              value={input1}
-              onChange={(event) => onChangeInput1(event.target.value)}
-              className="input"
-            />
-            <span className="text3">{"Email"}</span>
-            <input
-              placeholder={"Enter your email address"}
-              value={input2}
-              onChange={(event) => onChangeInput2(event.target.value)}
-              className="input2"
-            />
-            <span className="text3">{"Enter PAN number"}</span>
-            <input
-              placeholder={"Enter PAN number"}
-              value={input3}
-              onChange={(event) => onChangeInput3(event.target.value)}
-              className="input2"
-            />
-            <span className="text3">{"Organization Name"}</span>
-            <input
-              placeholder={"Enter the organization name"}
-              value={input4}
-              onChange={(event) => onChangeInput4(event.target.value)}
-              className="input2"
-            />
-            <span className="text3">{"Enter established date"}</span>
-            <input
-              placeholder={"____/__/__"}
-              value={input5}
-              onChange={(event) => onChangeInput5(event.target.value)}
-              className="input3"
-            />
-            <button className="button2" onClick={() => navigate("/User")}>
-              <span className="text4">{"Sign Up"}</span>
-            </button>
-          </div>
-          <span className="text5">{"Already have an account? Click here"}</span>
+    <div className="cold-container">
+      <div className="cold-background">
+        <div className="cold-shapes">
+          <div className="shape shape-1"></div>
+          <div className="shape shape-2"></div>
+          <div className="shape shape-3"></div>
         </div>
       </div>
-    </div>
-  );
-};
 
-export default Cold;
+      <div className="cold-content">
+        <div className="cold-card">
+          <button className="back-button" onClick={() => navigate(-1)}>
+            <span className="button-icon">←</span>
+            <span className="button-text">Back</span>
+          </button>
+
+          <div className="cold-header">
+            <h1 className="cold-title">Cold Store Registration</h1>
+            <p className="cold-subtitle">Please provide your cold store information</p>
+          </div>
+
+          <form className="cold-form" onSubmit={(e) => e.preventDefault()}>
+            <div className="form-group">
+              <label className="form-label">
+                Username <span className="required">*</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Enter your username"
+                value={formData.username}
+                onChange={(e) => handleChange("username", e.target.value)}
+                className={`form-input ${errors.username ? "error" : ""}`}
+              />
+              {errors.username && <span className="error-text">{errors.username}</span>}
+            </div>
+
+            <div className="form-group">
+              <label className="form-label">
+                Password <span className="required">*</span>
+              </label>
+              <input
+                type="password"
+                placeholder="Enter your password"
+                value={formData.password}
+                onChange={(e) => handleChange("password", e.target.value)}
+                className={`form-input ${errors.password ? "error" : ""}`}
+              />
+              {errors.password && <span className="error-text">{errors.password}</span>}
+            </div>
+
+            <div className="form-group">
+              <label className="form-label">
+                Re-enter Password <span className="required">*</span>
+              </label>
+              <input
+                type="password"
+                placeholder="Re-enter your password"
+                value={formData.reenterPassword}
+                onChange={(e) => handleChange("reenterPassword", e.target.value)}
+                className={`form-input ${errors.reenterPassword ? "error" : ""}`}
+              />
+              {errors.reenterPassword && <span className="error-text">{errors.reenterPassword}</span>}
+            </div>
+
+            {/* Existing form fields */}
+            <div className="form-group">
+              <label className="form-label">
+                Contact Number <span className="required">*</span>
+              </label>
+              <input
+                type="tel"
+                placeholder="Enter your Contact Number"
+                value={formData.contactNumber}
+                onChange={(e) => handleChange("contactNumber", e.target.value)}
+                className={`form-input ${errors.contactNumber ? "error" : ""}`}
+              />
+              {errors.contactNumber && <span className="error-text">{errors.contactNumber}</span>}
+            </div>
+
+            <div className="form-group">
+              <label className="form-label">
+                Email <span className="required">*</span>
+              </label>
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                value={formData.email}
+                onChange={(e) => handleChange("email", e.target.value)}
+                className={`form-input ${errors.email ? "error" : ""}`}
+              />
+              {errors.email && <span className="error-text">{errors.email}</span>}
+            </div>
+
+            <div className="form-group">
+              <label className="form-label">
+                PAN Number <span className="required">*</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Enter PAN number"
+                value={formData.panNumber}
+                onChange={(e) => handleChange("panNumber", e.target.value)}
+                className={`form-input ${errors.panNumber ? "error" : ""}`}
+              />
+              {errors.panNumber && <span className="error-text">{errors.panNumber}</span>}
+            </div>
+
+            <div className="form-group">
+              <label className="form-label">
+                Organization Name <span className="required">*</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Enter the organization name"
+                value={formData.organizationName}
+                onChange={(e) => handleChange("organizationName", e.target.value)}
+                className={`form-input ${errors.organizationName ? "error" : ""}`}
+              />
+              {errors.organizationName && <span className="error-text">{errors.organizationName}</span>}
+            </div>
+
+            <div className="form-group">
+              <label className="form-label">
+                Established Date <span className="required">*</span>
+              </label>
+              <input
+                type="date"
+                value={formData.establishedDate}
+                onChange={(e) => handleChange("establishedDate", e.target.value)}
+                className={`form-input ${errors.establishedDate ? "error" : ""}`}
+              />
+              {errors.establishedDate && <span className="error-text">{errors.establishedDate}</span>}
+            </div>
+
+            <div className="form-group">
+              <label className="form-label">
+                Description <span className="required">*</span>
+              </label>
+              <textarea
+                placeholder="Describe your cold store facilities and services..."
+                value={formData.description}
+                onChange={(e) => handleChange("description", e.target.value)}
+                className={`form-textarea ${errors.description ? "error" : ""}`}
+                rows="4"
+              />
+              {errors.description && <span className="error-text">{errors.description}</span>}
+            </div>
+
+            <button type="button" className="submit-button" onClick={handleSubmit}>
+              <span className="button-content">
+                <span className="button-text">Submit</span>
+                <span className="button-icon">→</span>
+              </span>
+            </button>
+
+            <div className="login-link">
+              Already have an account?
+              <button type="button" className="text-button" onClick={() => navigate("/login")}>
+                Login
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      {showAlert && (
+        <div className="alert-overlay">
+          <div className="alert-card">
+            <div className="alert-icon">✓</div>
+            <h2 className="alert-title">Registration Successful!</h2>
+            <p className="alert-message">
+              Thank you for registering your cold store. You will be redirected to the cold store interface in 5 seconds.
+            </p>
+            <div className="alert-progress">
+              <div className="progress-bar"></div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
+export default Cold
