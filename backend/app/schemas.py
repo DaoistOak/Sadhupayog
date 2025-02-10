@@ -39,3 +39,10 @@ class UserLoginSchema(BaseModel):
 class SellerGoodsCreateSchema(BaseModel):
     goods_name: str
     weight_kg: float
+
+class GoodDisplaySchema(BaseModel):
+    goods_name: str
+    weight_kg: float
+
+    class Config:
+        orm_mode = True
