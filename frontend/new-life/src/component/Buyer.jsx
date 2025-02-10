@@ -1,77 +1,120 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
-import "./Buyer.css";
+"use client"
 
-const Buyer = (props) => {
-  const navigate = useNavigate(); // Define the navigate function
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import "./Buyer.css"
 
-  const [contactNumber, setContactNumber] = useState('');
-  const [panNumber, setPanNumber] = useState('');
-  const [organizationName, setOrganizationName] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+const Buyer = () => {
+  const navigate = useNavigate()
+
+  const [contactNumber, setContactNumber] = useState("")
+  const [panNumber, setPanNumber] = useState("")
+  const [organizationName, setOrganizationName] = useState("")
+  const [password, setPassword] = useState("")
+  const [confirmPassword, setConfirmPassword] = useState("")
 
   return (
-    <div className="contain">
-      <div className="scroll-view">
-        <div className="column">
-          <button className="button" onClick={() => alert("Pressed!")}>
-            <span className="text">{"BACK"}</span>
+    <div className="buyer-container">
+      <div className="buyer-background">
+        <div className="buyer-shapes">
+          <div className="shape shape-1"></div>
+          <div className="shape shape-2"></div>
+          <div className="shape shape-3"></div>
+        </div>
+      </div>
+
+      <div className="buyer-content">
+        <div className="buyer-card">
+          <button className="back-button" onClick={() => navigate(-1)}>
+            <span className="button-icon">←</span>
+            <span className="button-text">Back</span>
           </button>
-          <span className="text2">{"BUYER DETAILS"}</span>
-          <div className="column2">
-            <span className="text3">{"Contact Number"}</span>
-            <input
-              placeholder="Enter Contact number"
-              value={contactNumber}
-              onChange={(event) => setContactNumber(event.target.value)}
-              className="input"
-            />
-            
-            <span className="text4">{"Enter PAN number (optional)"}</span>
-            <input
-              placeholder="Enter PAN number"
-              value={panNumber}
-              onChange={(event) => setPanNumber(event.target.value)}
-              className="input"
-            />
-            
-            <span className="text4">{"Enter Organization name (optional)"}</span>
-            <input
-              placeholder="Enter Organization name"
-              value={organizationName}
-              onChange={(event) => setOrganizationName(event.target.value)}
-              className="input2"
-            />
-            
-            <span className="text3">{"Enter Password"}</span>
-            <input
-              type="password"
-              placeholder="Enter password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              className="input2"
-            />
-            
-            <span className="text3">{"Re-enter Password"}</span>
-            <input
-              type="password"
-              placeholder="Re-enter password"
-              value={confirmPassword}
-              onChange={(event) => setConfirmPassword(event.target.value)}
-              className="input3"
-            />
-            
-            <button className="button2" onClick={() => navigate("/Home")}>
-              <span className="text5">{"Sign Up"}</span>
-            </button>
+
+          <div className="buyer-header">
+            <h1 className="buyer-title">Buyer Details</h1>
+            <p className="buyer-subtitle">Please fill in your information</p>
           </div>
-          
-          <span className="text6">{"Already have an account? Click here"}</span>
+
+          <form className="buyer-form">
+            <div className="form-group">
+              <label className="form-label">Contact Number</label>
+              <input
+                type="tel"
+                placeholder="Enter Contact number"
+                value={contactNumber}
+                onChange={(event) => setContactNumber(event.target.value)}
+                className="form-input"
+              />
+              <div className="input-highlight"></div>
+            </div>
+
+            <div className="form-group">
+              <label className="form-label">PAN Number (Optional)</label>
+              <input
+                type="text"
+                placeholder="Enter PAN number"
+                value={panNumber}
+                onChange={(event) => setPanNumber(event.target.value)}
+                className="form-input"
+              />
+              <div className="input-highlight"></div>
+            </div>
+
+            <div className="form-group">
+              <label className="form-label">Organization Name (Optional)</label>
+              <input
+                type="text"
+                placeholder="Enter Organization name"
+                value={organizationName}
+                onChange={(event) => setOrganizationName(event.target.value)}
+                className="form-input"
+              />
+              <div className="input-highlight"></div>
+            </div>
+
+            <div className="form-group">
+              <label className="form-label">Password</label>
+              <input
+                type="password"
+                placeholder="Enter password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                className="form-input"
+              />
+              <div className="input-highlight"></div>
+            </div>
+
+            <div className="form-group">
+              <label className="form-label">Confirm Password</label>
+              <input
+                type="password"
+                placeholder="Re-enter password"
+                value={confirmPassword}
+                onChange={(event) => setConfirmPassword(event.target.value)}
+                className="form-input"
+              />
+              <div className="input-highlight"></div>
+            </div>
+
+            <button type="button" className="submit-button" onClick={() => navigate("/Home")}>
+              <span className="button-content">
+                <span className="button-text">Sign Up</span>
+                <span className="button-icon">→</span>
+              </span>
+            </button>
+
+            <div className="login-link">
+              Already have an account?
+              <button type="button" className="text-button" onClick={() => navigate("/login")}>
+                Login here
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Buyer;
+export default Buyer
+

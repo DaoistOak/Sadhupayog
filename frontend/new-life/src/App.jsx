@@ -5,7 +5,8 @@ import Buyer from './component/Buyer';
 import LoginPage from './component/LoginPage';
 import Cold from './component/Cold';
 import User from './component/User';
-
+import Sellerinterface from './component/Sellerinterface';
+import Coldstoreinterface from './component/Coldstoreinterface';
 function App() {
   return (
     <Router>
@@ -16,6 +17,8 @@ function App() {
         <Route path="/Cold" element={<Cold />} />
         <Route path="/User" element={<User/>} />
         <Route path="/Home" element={<Home />} />
+        <Route path="/Sellerinterface" element={<Sellerinterface/>} />
+        <Route path="/Coldstoreinterface" element={<Coldstoreinterface/>} />
       </Routes>
     </Router>
   );

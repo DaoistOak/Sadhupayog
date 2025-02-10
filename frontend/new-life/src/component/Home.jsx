@@ -1,118 +1,122 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import './Home.css';
+"use client"
 
-const Home = (props) => {
-  const navigate = useNavigate();  // useNavigate hook for navigation
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import "./Home.css"
 
-  const [isRegistering, setIsRegistering] = useState(null);  // null means undecided, true means Registering, false means Login
-  const [userType, setUserType] = useState(null);  // Tracks the user's type (Buyer, Seller, Cold Store)
-  
-  // State for login form
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [loginError, setLoginError] = useState("");
+const Home = () => {
+  const navigate = useNavigate()
+  const [isRegistering, setIsRegistering] = useState(null)
+  const [userType, setUserType] = useState(null)
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+  const [loginError, setLoginError] = useState("")
 
-  // Function to handle Register button
-  const handleRegister = (type) => {
-    setIsRegistering(true);
-    setUserType(type);
-  };
-
-  // Function to handle Login button
   const handleLogin = () => {
     if (username && password) {
-      // Perform login validation (for now just check if both fields are filled)
-      setLoginError(""); // Reset any previous error
-      navigate("/user");  // Redirect to User page upon successful login (replace with actual login logic)
+      setLoginError("")
+      navigate("/user")
     } else {
-      setLoginError("Please enter both username and password.");
+      setLoginError("Please enter both username and password.")
     }
-  };
+  }
 
   return (
-    <div className="contain">
-      <div className="scroll-view">
-        <div className="column">
+    <div className="auth-container">
+      <div className="auth-background">
+        <div className="auth-shapes">
+          <div className="shape shape-1"></div>
+          <div className="shape shape-2"></div>
+          <div className="shape shape-3"></div>
+        </div>
+      </div>
+
+      <div className="auth-content">
+        <div className="auth-card">
+          <div className="brand">
+            <h1 className="brand-title">SADHUPAYOG</h1>
+            <p className="brand-subtitle">Welcome back! Please login to your account.</p>
+          </div>
+
           {isRegistering === null && (
-            <>
-              <span className="text">{"Sadupagyog"}</span>
-              <div className="row-view">
-                <button className="button" onClick={() => setIsRegistering(false)}>
-                  <span className="text2">{"LOGIN"}</span>
-                </button>
-              </div>
-              <div className="row-view2">
-                <button className="button" onClick={() => setIsRegistering(true)}>
-                  <span className="text3">{"REGISTER"}</span>
-                </button>
-              </div>
-            </>
+            <div className="auth-options">
+              <button className="auth-button login-btn" onClick={() => setIsRegistering(false)}>
+                <span className="button-content">
+                  <span className="button-text">Login</span>
+                  <span className="button-icon">→</span>
+                </span>
+              </button>
+              <button className="auth-button register-btn" onClick={() => setIsRegistering(true)}>
+                <span className="button-content">
+                  <span className="button-text">Register</span>
+                  <span className="button-icon">+</span>
+                </span>
+              </button>
+            </div>
           )}
 
-          {/* If the user is on the Login screen */}
           {isRegistering === false && (
-            <div className="row-view">
-              <span className="text">{"Please log in"}</span>
-              <div>
+            <div className="auth-form">
+              <div className="form-group">
                 <input
                   type="text"
                   placeholder="Username"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  className="input"
+                  className="auth-input"
                 />
+                <div className="input-highlight"></div>
+              </div>
+              <div className="form-group">
                 <input
                   type="password"
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="input"
+                  className="auth-input"
                 />
-                {loginError && <span className="error-text">{loginError}</span>} {/* Show error message */}
-                <button className="button" onClick={handleLogin}>
-                  <span className="text2">{"LOG IN"}</span>
-                </button>
+                <div className="input-highlight"></div>
               </div>
+              {loginError && <div className="error-message">{loginError}</div>}
+              <button className="auth-button submit-btn" onClick={handleLogin}>
+                <span className="button-content">
+                  <span className="button-text">Login Now</span>
+                  <span className="button-icon">→</span>
+                </span>
+              </button>
+              <button className="back-button" onClick={() => setIsRegistering(null)}>
+                ← Back
+              </button>
             </div>
           )}
 
-          {/* If the user is on the Register screen */}
           {isRegistering && !userType && (
-            <>
-              <span className="text">{"WHO ARE YOU?"}</span>
-              <span className="text">{"Choose your user type"}</span>
-              <div className="row-view">
-                <button className="button" onClick={() => navigate("/buyer")}>
-                  Register as Buyer
+            <div className="register-options">
+              <h2 className="register-title">Choose your role</h2>
+              <div className="role-buttons">
+                <button className="role-button buyer" onClick={() => navigate("/buyer")}>
+                  <span className="role-icon">🛒</span>
+                  <span className="role-text">Buyer</span>
+                </button>
+                <button className="role-button seller" onClick={() => navigate("/LoginPage")}>
+                  <span className="role-icon">💼</span>
+                  <span className="role-text">Seller</span>
+                </button>
+                <button className="role-button cold-store" onClick={() => navigate("/cold")}>
+                  <span className="role-icon">❄️</span>
+                  <span className="role-text">Cold Store</span>
                 </button>
               </div>
-              <div className="row-view2">
-                <button className="button" onClick={() => navigate("/LoginPage")}>
-                  Register as Seller
-                </button>
-              </div>
-              <div className="row-view3">
-                <button className="button2" onClick={() => navigate("/cold")}>
-                  Register as Cold Store
-                </button>
-              </div>
-            </>
-          )}
-
-          {/* If registration has been chosen */}
-          {isRegistering && userType && (
-            <div className="row-view3">
-              <span className="text">{"You have selected " + userType}</span>
-              <button className="button" onClick={() => alert("Registration Complete!")}>
-                <span className="text3">{"CONFIRM REGISTRATION"}</span>
+              <button className="back-button" onClick={() => setIsRegistering(null)}>
+                ← Back
               </button>
             </div>
           )}
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
+
