@@ -6,20 +6,19 @@ from marshmallow import ValidationError
 from app.api.routes import buyers, cold_stores, sellers
 from app.db.base import Base
 from app.db.session import engine, get_db
-from app.core.security import verify_password, get_password_hash
 from app.schemas import BuyerCreateSchema, SellerCreateSchema, ColdStoreCreateSchema, UserLoginSchema  # Updated import
 
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Buyer-Cold Store-Seller Platform API")
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=["http://localhost:3000"],
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
 
 # Register API routers
 app.include_router(sellers.router)
@@ -32,11 +31,11 @@ router = APIRouter()
 async def register_user(request: Request, user_type: str):
     data = await request.json()
     if user_type == "buyer":
-        schema = BuyerCreateSchema()
+        schema = BuyerCreateSchema
     elif user_type == "seller":
-        schema = SellerCreateSchema()
+        schema = SellerCreateSchema
     elif user_type == "cold_store":
-        schema = ColdStoreCreateSchema()
+        schema = ColdStoreCreateSchema
     else:
         raise HTTPException(status_code=400, detail="Invalid user type specified")
 
@@ -47,19 +46,18 @@ async def register_user(request: Request, user_type: str):
     
     return {"message": f"{user_type.capitalize()} registered successfully"}
 
-@router.post("/login/{user_type}")
-async def login_user(request: Request, user_type: str):
-    data = await request.json()
-    schema = UserLoginSchema()
-
-    try:
-        validated_data = schema.load(data)
-    except ValidationError as err:
-        raise HTTPException(status_code=400, detail=err.messages)
-    
-
-    return {"message": f"{user_type.capitalize()} login successful"}
+app.include_router(router)
 
 @app.get("/")
 def read_root():
     return {"message": "Welcome to the Buyer-Cold Store-Seller Platform API"}
+
+@app.post("/cold_stores/")
+async def create_cold_store(cold_store: ColdStoreCreateSchema):
+    # Implementation to create a cold store
+    return {"message": "Cold store created"}
+
+@app.get("/cold_stores/")
+async def read_cold_stores():
+    # Implementation to read cold stores
+    return [{"name": "Test Store", "location": "Test Location", "capacity": 1000}]

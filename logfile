@@ -259,3 +259,170 @@
 2025-02-10 09:33:33.613 +0545 [1558705] STATEMENT:  INSERT INTO sellers (name, images) VALUES ('Sample Seller', '["image1.jpg", "image2.jpg"]');
 2025-02-10 09:36:21.483 +0545 [334645] LOG:  checkpoint starting: time
 2025-02-10 09:36:25.634 +0545 [334645] LOG:  checkpoint complete: wrote 41 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.015 s, sync=0.116 s, total=4.151 s; sync files=32, longest=0.008 s, average=0.004 s; distance=106 kB, estimate=1983 kB; lsn=0/2C67A70, redo lsn=0/2C67A18
+2025-02-10 12:22:18.648 +0545 [334644] LOG:  received smart shutdown request
+2025-02-10 12:22:18.648 +0545 [1667840] FATAL:  terminating connection due to administrator command
+2025-02-10 12:22:18.651 +0545 [355459] FATAL:  terminating connection due to administrator command
+2025-02-10 12:22:18.662 +0545 [334644] LOG:  background worker "logical replication launcher" (PID 334650) exited with exit code 1
+2025-02-10 12:22:18.723 +0545 [334645] LOG:  shutting down
+2025-02-10 12:22:18.747 +0545 [334645] LOG:  checkpoint starting: shutdown immediate
+2025-02-10 12:22:18.854 +0545 [334645] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.025 s, sync=0.009 s, total=0.129 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=1785 kB; lsn=0/2C67B20, redo lsn=0/2C67B20
+2025-02-10 12:22:18.988 +0545 [334644] LOG:  database system is shut down
+2025-02-10 13:45:27.686 +0545 [62837] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 13:45:27.687 +0545 [62837] LOG:  listening on IPv6 address "::1", port 5432
+2025-02-10 13:45:27.687 +0545 [62837] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-02-10 13:45:27.691 +0545 [62837] FATAL:  could not create lock file "/run/postgresql/.s.PGSQL.5432.lock": No such file or directory
+2025-02-10 13:45:27.694 +0545 [62837] LOG:  database system is shut down
+2025-02-10 14:04:50.027 +0545 [79270] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 14:04:50.028 +0545 [79270] LOG:  listening on IPv6 address "::1", port 5432
+2025-02-10 14:04:50.028 +0545 [79270] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-02-10 14:04:50.032 +0545 [79270] FATAL:  could not create lock file "/run/postgresql/.s.PGSQL.5432.lock": No such file or directory
+2025-02-10 14:04:50.035 +0545 [79270] LOG:  database system is shut down
+2025-02-10 14:08:59.571 +0545 [83116] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 14:08:59.572 +0545 [83116] LOG:  listening on IPv6 address "::1", port 5432
+2025-02-10 14:08:59.572 +0545 [83116] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-02-10 14:08:59.578 +0545 [83116] FATAL:  could not create lock file "/run/postgresql/.s.PGSQL.5432.lock": No such file or directory
+2025-02-10 14:08:59.580 +0545 [83116] LOG:  database system is shut down
+2025-02-10 14:12:03.113 +0545 [86199] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 14:12:03.114 +0545 [86199] LOG:  listening on IPv6 address "::1", port 5432
+2025-02-10 14:12:03.114 +0545 [86199] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-02-10 14:12:03.119 +0545 [86199] FATAL:  could not create lock file "/run/postgresql/.s.PGSQL.5432.lock": No such file or directory
+2025-02-10 14:12:03.122 +0545 [86199] LOG:  database system is shut down
+2025-02-10 14:12:37.826 +0545 [86876] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 14:12:37.827 +0545 [86876] LOG:  listening on IPv6 address "::1", port 5432
+2025-02-10 14:12:37.827 +0545 [86876] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-02-10 14:12:37.832 +0545 [86876] FATAL:  could not create lock file "/run/postgresql/.s.PGSQL.5432.lock": No such file or directory
+2025-02-10 14:12:37.834 +0545 [86876] LOG:  database system is shut down
+2025-02-10 14:15:20.855 +0545 [89855] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 14:15:20.856 +0545 [89855] LOG:  listening on IPv6 address "::1", port 5432
+2025-02-10 14:15:20.856 +0545 [89855] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-02-10 14:15:20.861 +0545 [89855] FATAL:  could not create lock file "/run/postgresql/.s.PGSQL.5432.lock": No such file or directory
+2025-02-10 14:15:20.864 +0545 [89855] LOG:  database system is shut down
+2025-02-10 14:17:00.743 +0545 [91553] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 14:17:00.744 +0545 [91553] LOG:  listening on IPv6 address "::1", port 5432
+2025-02-10 14:17:00.744 +0545 [91553] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-02-10 14:17:00.748 +0545 [91553] FATAL:  could not create lock file "/run/postgresql/.s.PGSQL.5432.lock": No such file or directory
+2025-02-10 14:17:00.751 +0545 [91553] LOG:  database system is shut down
+2025-02-10 14:18:55.804 +0545 [94662] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 14:18:55.804 +0545 [94662] LOG:  listening on IPv6 address "::1", port 5432
+2025-02-10 14:18:55.804 +0545 [94662] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-02-10 14:18:55.809 +0545 [94662] FATAL:  could not create lock file "/run/postgresql/.s.PGSQL.5432.lock": No such file or directory
+2025-02-10 14:18:55.812 +0545 [94662] LOG:  database system is shut down
+2025-02-10 14:28:40.998 +0545 [103242] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 14:28:40.998 +0545 [103242] LOG:  listening on IPv6 address "::1", port 5432
+2025-02-10 14:28:40.998 +0545 [103242] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-02-10 14:28:41.003 +0545 [103242] FATAL:  could not create lock file "/run/postgresql/.s.PGSQL.5432.lock": No such file or directory
+2025-02-10 14:28:41.005 +0545 [103242] LOG:  database system is shut down
+2025-02-10 14:40:13.585 +0545 [114478] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 14:40:13.586 +0545 [114478] LOG:  listening on IPv6 address "::1", port 5432
+2025-02-10 14:40:13.586 +0545 [114478] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-02-10 14:40:13.591 +0545 [114478] FATAL:  could not create lock file "/run/postgresql/.s.PGSQL.5432.lock": No such file or directory
+2025-02-10 14:40:13.594 +0545 [114478] LOG:  database system is shut down
+2025-02-10 14:41:58.383 +0545 [116639] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 14:41:58.384 +0545 [116639] LOG:  could not bind IPv6 address "::1": Address already in use
+2025-02-10 14:41:58.384 +0545 [116639] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 14:41:58.384 +0545 [116639] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2025-02-10 14:41:58.384 +0545 [116639] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 14:41:58.384 +0545 [116639] WARNING:  could not create listen socket for "localhost"
+2025-02-10 14:41:58.384 +0545 [116639] FATAL:  could not create any TCP/IP sockets
+2025-02-10 14:41:58.386 +0545 [116639] LOG:  database system is shut down
+2025-02-10 14:43:20.577 +0545 [118768] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 14:43:20.578 +0545 [118768] LOG:  listening on IPv6 address "::1", port 5432
+2025-02-10 14:43:20.578 +0545 [118768] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-02-10 14:43:20.583 +0545 [118768] FATAL:  could not create lock file "/run/postgresql/.s.PGSQL.5432.lock": No such file or directory
+2025-02-10 14:43:20.586 +0545 [118768] LOG:  database system is shut down
+2025-02-10 14:45:24.737 +0545 [121415] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 14:45:24.738 +0545 [121415] LOG:  could not bind IPv6 address "::1": Address already in use
+2025-02-10 14:45:24.738 +0545 [121415] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 14:45:24.738 +0545 [121415] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2025-02-10 14:45:24.738 +0545 [121415] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 14:45:24.738 +0545 [121415] WARNING:  could not create listen socket for "localhost"
+2025-02-10 14:45:24.738 +0545 [121415] FATAL:  could not create any TCP/IP sockets
+2025-02-10 14:45:24.740 +0545 [121415] LOG:  database system is shut down
+2025-02-10 14:46:34.908 +0545 [123247] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 14:46:34.908 +0545 [123247] LOG:  could not bind IPv6 address "::1": Address already in use
+2025-02-10 14:46:34.908 +0545 [123247] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 14:46:34.908 +0545 [123247] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2025-02-10 14:46:34.908 +0545 [123247] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 14:46:34.908 +0545 [123247] WARNING:  could not create listen socket for "localhost"
+2025-02-10 14:46:34.908 +0545 [123247] FATAL:  could not create any TCP/IP sockets
+2025-02-10 14:46:34.911 +0545 [123247] LOG:  database system is shut down
+2025-02-10 14:47:26.582 +0545 [124578] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 14:47:26.583 +0545 [124578] LOG:  could not bind IPv6 address "::1": Address already in use
+2025-02-10 14:47:26.583 +0545 [124578] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 14:47:26.583 +0545 [124578] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2025-02-10 14:47:26.583 +0545 [124578] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 14:47:26.583 +0545 [124578] WARNING:  could not create listen socket for "localhost"
+2025-02-10 14:47:26.583 +0545 [124578] FATAL:  could not create any TCP/IP sockets
+2025-02-10 14:47:26.585 +0545 [124578] LOG:  database system is shut down
+2025-02-10 14:48:30.066 +0545 [126005] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 14:48:30.066 +0545 [126005] LOG:  could not bind IPv6 address "::1": Address already in use
+2025-02-10 14:48:30.066 +0545 [126005] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 14:48:30.066 +0545 [126005] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2025-02-10 14:48:30.066 +0545 [126005] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 14:48:30.066 +0545 [126005] WARNING:  could not create listen socket for "localhost"
+2025-02-10 14:48:30.066 +0545 [126005] FATAL:  could not create any TCP/IP sockets
+2025-02-10 14:48:30.069 +0545 [126005] LOG:  database system is shut down
+2025-02-10 14:48:40.959 +0545 [126281] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 14:48:40.960 +0545 [126281] LOG:  could not bind IPv6 address "::1": Address already in use
+2025-02-10 14:48:40.960 +0545 [126281] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 14:48:40.960 +0545 [126281] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2025-02-10 14:48:40.960 +0545 [126281] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 14:48:40.960 +0545 [126281] WARNING:  could not create listen socket for "localhost"
+2025-02-10 14:48:40.960 +0545 [126281] FATAL:  could not create any TCP/IP sockets
+2025-02-10 14:48:40.962 +0545 [126281] LOG:  database system is shut down
+2025-02-10 15:47:23.606 +0545 [180761] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 15:47:23.607 +0545 [180761] LOG:  could not bind IPv6 address "::1": Address already in use
+2025-02-10 15:47:23.607 +0545 [180761] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 15:47:23.607 +0545 [180761] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2025-02-10 15:47:23.607 +0545 [180761] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 15:47:23.607 +0545 [180761] WARNING:  could not create listen socket for "localhost"
+2025-02-10 15:47:23.607 +0545 [180761] FATAL:  could not create any TCP/IP sockets
+2025-02-10 15:47:23.608 +0545 [180761] LOG:  database system is shut down
+2025-02-10 15:54:16.596 +0545 [186607] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 15:54:16.597 +0545 [186607] LOG:  could not bind IPv6 address "::1": Address already in use
+2025-02-10 15:54:16.597 +0545 [186607] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 15:54:16.597 +0545 [186607] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2025-02-10 15:54:16.597 +0545 [186607] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 15:54:16.597 +0545 [186607] WARNING:  could not create listen socket for "localhost"
+2025-02-10 15:54:16.597 +0545 [186607] FATAL:  could not create any TCP/IP sockets
+2025-02-10 15:54:16.599 +0545 [186607] LOG:  database system is shut down
+2025-02-10 16:08:19.425 +0545 [198325] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 16:08:19.426 +0545 [198325] LOG:  could not bind IPv6 address "::1": Address already in use
+2025-02-10 16:08:19.426 +0545 [198325] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 16:08:19.426 +0545 [198325] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2025-02-10 16:08:19.426 +0545 [198325] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 16:08:19.426 +0545 [198325] WARNING:  could not create listen socket for "localhost"
+2025-02-10 16:08:19.426 +0545 [198325] FATAL:  could not create any TCP/IP sockets
+2025-02-10 16:08:19.427 +0545 [198325] LOG:  database system is shut down
+2025-02-10 16:56:54.013 +0545 [239245] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 16:56:54.014 +0545 [239245] LOG:  could not bind IPv6 address "::1": Address already in use
+2025-02-10 16:56:54.014 +0545 [239245] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 16:56:54.014 +0545 [239245] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2025-02-10 16:56:54.014 +0545 [239245] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 16:56:54.014 +0545 [239245] WARNING:  could not create listen socket for "localhost"
+2025-02-10 16:56:54.014 +0545 [239245] FATAL:  could not create any TCP/IP sockets
+2025-02-10 16:56:54.016 +0545 [239245] LOG:  database system is shut down
+2025-02-10 17:04:27.051 +0545 [246070] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 17:04:27.051 +0545 [246070] LOG:  could not bind IPv6 address "::1": Address already in use
+2025-02-10 17:04:27.051 +0545 [246070] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 17:04:27.052 +0545 [246070] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2025-02-10 17:04:27.052 +0545 [246070] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 17:04:27.052 +0545 [246070] WARNING:  could not create listen socket for "localhost"
+2025-02-10 17:04:27.052 +0545 [246070] FATAL:  could not create any TCP/IP sockets
+2025-02-10 17:04:27.053 +0545 [246070] LOG:  database system is shut down
+2025-02-10 17:11:01.235 +0545 [252210] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 17:11:01.236 +0545 [252210] LOG:  could not bind IPv6 address "::1": Address already in use
+2025-02-10 17:11:01.236 +0545 [252210] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 17:11:01.236 +0545 [252210] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2025-02-10 17:11:01.236 +0545 [252210] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 17:11:01.236 +0545 [252210] WARNING:  could not create listen socket for "localhost"
+2025-02-10 17:11:01.236 +0545 [252210] FATAL:  could not create any TCP/IP sockets
+2025-02-10 17:11:01.237 +0545 [252210] LOG:  database system is shut down
+2025-02-10 17:24:42.626 +0545 [264002] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-10 17:24:42.627 +0545 [264002] LOG:  could not bind IPv6 address "::1": Address already in use
+2025-02-10 17:24:42.627 +0545 [264002] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 17:24:42.627 +0545 [264002] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2025-02-10 17:24:42.627 +0545 [264002] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2025-02-10 17:24:42.627 +0545 [264002] WARNING:  could not create listen socket for "localhost"
+2025-02-10 17:24:42.627 +0545 [264002] FATAL:  could not create any TCP/IP sockets
+2025-02-10 17:24:42.629 +0545 [264002] LOG:  database system is shut down

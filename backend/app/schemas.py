@@ -1,39 +1,41 @@
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel
+from typing import Optional
 
 class BuyerCreateSchema(BaseModel):
-    username: str = Field(..., min_length=1)
-    password: str = Field(..., min_length=1)
-    business_name: str = Field(..., min_length=1)
-    email: EmailStr
+    username: str
+    password: str
+    organization_name: str
+    email: str
 
 class BuyerLoginSchema(BaseModel):
-    username: str = Field(..., min_length=1)
-    password: str = Field(..., min_length=1)
+    username: str
+    password: str
 
 class SellerCreateSchema(BaseModel):
-    username: str = Field(..., min_length=1)
-    password: str = Field(..., min_length=1)
-    organization_name: str = Field(..., min_length=1)
-    email: EmailStr
-    location: str = Field(..., min_length=1)
+    username: str
+    password: str
+    organization_name: str
+    email: str
+    location: str
 
 class SellerLoginSchema(BaseModel):
-    username: str = Field(..., min_length=1)
-    password: str = Field(..., min_length=1)
+    username: str
+    password: str
 
 class ColdStoreCreateSchema(BaseModel):
-    location: str = Field(..., min_length=1)
+    name: str
+    location: str
     capacity: float
-    active_time: str = Field(..., min_length=1)
+    description: Optional[str] = None
 
 class ColdStoreLoginSchema(BaseModel):
-    username: str = Field(..., min_length=1)
-    password: str = Field(..., min_length=1)
+    username: str
+    password: str
 
 class UserLoginSchema(BaseModel):
-    username: str = Field(..., min_length=1)
-    password: str = Field(..., min_length=1)
+    username: str
+    password: str
 
 class SellerGoodsCreateSchema(BaseModel):
-    goods_name: str = Field(..., min_length=1, description="Name of the good")
-    weight_kg: float = Field(..., gt=0, description="Weight of the good in kilograms")
+    goods_name: str
+    weight_kg: float

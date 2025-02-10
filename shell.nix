@@ -37,7 +37,7 @@ pkgs.mkShell {
   ];
 
   shellHook = ''
-    export DATABASE_URL="postgresql://myuser:password@localhost/mydatabase"
+    export DATABASE_URL="postgresql://myappuser:password@localhost/sadhupayog"
 
     # Initialize PostgreSQL data directory if it doesn't exist
     if [ ! -d "$HOME/pgdata" ]; then
@@ -56,5 +56,11 @@ pkgs.mkShell {
     echo "PostgreSQL is ready!"
 
     echo "Development environment activated!"
+    source bvenv/bin/activate
+    pip install --upgrade pip
+    pip install -r backend/requirements.txt
+    cd backend
+    uvicorn app.main:app --reload
+    echo "Python environment activated!"
   '';
 }
